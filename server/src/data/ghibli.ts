@@ -1,5 +1,5 @@
 // import { Cut } from '../entities/Cut';
-// import { Film } from "../entities/Film";
+import { Film } from "../entities/Film";
 
 interface Cut {
   id: number;
