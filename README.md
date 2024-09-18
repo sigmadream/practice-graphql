@@ -49,3 +49,12 @@ curl --request POST --header 'content-type: application/json' --url http://local
 # npm install -D prettier eslint-config-prettier eslint-plugin-prettier
 # npx install-peerdeps --dev eslint-config-airbnb
 ```
+
+### Client
+
+```
+npm create vite@latest web -- --template react-ts
+npm install @apollo/client @chakra-ui/icons @chakra-ui/react @emotion/react @emotion/styled
+npm install apollo-upload-client framer-motion graphql react-hook-form react-icons react-lazyload react-router-dom react-waypoint
+npm install -D @testing-library/jest-dom @testing-library/react @testing-library/user-event @types/jest @types/node @types/react @types/react-dom
+```
