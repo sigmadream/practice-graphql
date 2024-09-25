@@ -1,5 +1,6 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { Box, ChakraProvider, Text, theme } from "@chakra-ui/react";
+import { BrowserRouter, Route } from 'react-router-dom';
 import * as React from "react";
 import FilmList from "./components/film/FilmList";
 
@@ -12,11 +13,9 @@ export const App: React.FC = () => {
   return (
     <ApolloProvider client={apolloClient}>
       <ChakraProvider theme={theme}>
-        <Box>
-          <Text>Ghibli GraphQL</Text>
-        </Box>
-
-        <FilmList />
+        <BrowserRouter>
+          <FilmList />
+        </BrowserRouter>
       </ChakraProvider>
     </ApolloProvider>
   );
