@@ -1,7 +1,16 @@
-import { Arg, Field, Int, ObjectType, Query, Resolver } from "type-graphql";
+import {
+  Arg,
+  Field,
+  FieldResolver,
+  Int,
+  ObjectType,
+  Query,
+  Resolver,
+  Root,
+} from "type-graphql";
 import ghibliData from "../data/ghibli";
 import { Film } from "../entities/Film";
-import { FILE } from "dns";
+import { Director } from "../entities/Director";
 
 @ObjectType()
 class PaginatedFilms {
@@ -43,6 +52,11 @@ export class FilmResolver {
       cursor: hasNext ? nextCursor : null,
       films: result,
     };
+  }
+
+  @FieldResolver(() => Director)
+  director(@Root() parentFilm: Film): Director | undefined {
+    return ghibliData.directors.find((dr) => dr.id === parentFilm.director_id);
   }
 
   @Query(() => Film, { nullable: true })
