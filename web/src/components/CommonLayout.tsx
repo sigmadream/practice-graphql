@@ -1,9 +1,9 @@
-import { BackgroundProps, Box } from '@chakra-ui/react';
-import React from 'react';
-import Navbar from './nav/Navbar';
+import { BackgroundProps, Box } from "@chakra-ui/react";
+import React from "react";
+import Navbar from "./nav/Navbar";
 
 interface CommonLayoutProps {
-  bg?: BackgroundProps['bg'];
+  bg?: BackgroundProps["bg"];
   children: React.ReactNode;
 }
 export default function CommonLayout({

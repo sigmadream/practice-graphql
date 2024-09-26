@@ -1,5 +1,5 @@
-import { InMemoryCache } from '@apollo/client';
-import { PaginatedFilms } from '../generated/graphql';
+import { InMemoryCache } from "@apollo/client";
+import { PaginatedFilms } from "../generated/graphql";
 
 export const createApolloCache = (): InMemoryCache => {
   return new InMemoryCache({
@@ -10,7 +10,7 @@ export const createApolloCache = (): InMemoryCache => {
             keyArgs: false,
             merge: (
               existing: PaginatedFilms | undefined,
-              incoming: PaginatedFilms,
+              incoming: PaginatedFilms
             ): PaginatedFilms => {
               return {
                 cursor: incoming.cursor,

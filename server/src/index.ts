@@ -9,13 +9,14 @@ import { ApolloServerPluginLandingPageLocalDefault } from "@apollo/server/plugin
 
 import { buildSchema } from "type-graphql";
 import { FilmResolver } from "./resolvers/Film";
+import { CutResolver } from "./resolvers/Cut";
 
 async function main() {
   const app = express();
   const httpServer = http.createServer(app);
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [FilmResolver],
+      resolvers: [FilmResolver, CutResolver],
     }),
     plugins: [ApolloServerPluginLandingPageLocalDefault()],
   });

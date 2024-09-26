@@ -1,7 +1,16 @@
-import { Arg, Field, FieldResolver, Int, ObjectType, Query, Resolver, Root } from "type-graphql";
+import {
+  Arg,
+  Field,
+  FieldResolver,
+  Int,
+  ObjectType,
+  Query,
+  Resolver,
+  Root,
+} from "type-graphql";
 import ghibliData from "../data/ghibli";
 import { Film } from "../entities/Film";
-import { Director } from "../entities/Director"
+import { Director } from "../entities/Director";
 
 @ObjectType()
 class PaginatedFilms {
